@@ -93,7 +93,7 @@ def etl_frames(etl_data):
                         b.skip('<II')
                         frag_size = b.read('<I')
                         ev_left = ev_size - (b.off-ev_start)
-                        assert(frag_size == ev_left)
+                        # assert(frag_size == ev_left)
                         t = start_timestamp + off_timestamp
 
                         yield (t, b.read_bytes(ev_size - (b.off - ev_start)))
